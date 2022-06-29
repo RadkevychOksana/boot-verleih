@@ -1,0 +1,11 @@
+1. Verbindung zur Datenbank
+2. Überpüfen die Verbindung zur Datenbank
+3. Verbinde die Datenbank mit Seiten, auf denen Variablen verwendet werden
+4. Alle Tabellenfelder auswählen
+3. Datenausgabe (Zeile)
+4. Daten in einer Kategorie eine Zeile ($categorie)
+5. Wenn der Block nicht wiederholt wird, verwenden array, um die Blöcke zu generieren
+6. Generieren Links für Kategorien $categorie['slug'] und  $categorie['name'] 
+7. Generieren Links (($categorie['slug'])) und die Namne ($categorie['name'])) für Kategorien in Navbar 
+8. Generieren auf den Sliden die Namen von Kategories, die Bilder von eigenen Kategorie, die Links für die eigene Kategorie
+9. Definieren die aktive Folie

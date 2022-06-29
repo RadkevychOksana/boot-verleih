@@ -41,42 +41,21 @@
     <div class="container-fluid p-0">
         <div id="header-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100" src="img/carousel-canoe.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h3 class="text-white mb-3 d-none d-sm-block">Best Boat Rent Service</h3>
-                            <h1 class="display-3 text-white mb-3">Canoes</h1>
-                            <h5 class="text-white mb-3 d-none d-sm-block">Duo nonumy et dolor tempor no et. Diam sit diam sit diam erat</h5>
-                            <a href="#booking" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Book Now</a>
-                            <a href="boat.php" class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">Learn More</a>
+                <?php foreach ($categories as $key => $categorie) : ?>
+                    <div class="carousel-item <?= $key === 0 ? 'active' : ''; ?>">
+                        <img class="w-100" src="<?= $categorie['carousel_image'] ?>" alt="Image">
+                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                            <div class="p-3" style="max-width: 900px;">
+                                <h3 class="text-white mb-3 d-none d-sm-block">Best Boat Rent Service</h3>
+                                <h1 class="display-3 text-white mb-3"><?= $categorie['name'] ?></h1>
+                                <h5 class="text-white mb-3 d-none d-sm-block">Duo nonumy et dolor tempor no et. Diam sit diam sit diam erat</h5>
+                                <a href="#booking" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Book Now</a>
+                                <a href="boat.php=<?= $categorie['slug'] ?>" class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">Learn More</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="w-100" src="img/carousel-kayak.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h3 class="text-white mb-3 d-none d-sm-block">Best Boat Rent Service</h3>
-                            <h1 class="display-3 text-white mb-3">Kayaks</h1>
-                            <h5 class="text-white mb-3 d-none d-sm-block">Duo nonumy et dolor tempor no et. Diam sit diam sit diam erat</h5>
-                            <a href="#booking" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Book Now</a>
-                            <a href="boat.php" class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="w-100" src="img/carousel-raft.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h3 class="text-white mb-3 d-none d-sm-block">Best Boat Rent Service</h3>
-                            <h1 class="display-3 text-white mb-3">Rafts</h1>
-                            <h5 class="text-white mb-3 d-none d-sm-block">Duo nonumy et dolor tempor no et. Diam sit diam sit diam erat</h5>
-                            <a href="#booking" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Book Now</a>
-                            <a href="boat.php" class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">Learn More</a>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
+
             </div>
             <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
                 <div class="btn btn-primary rounded" style="width: 45px; height: 45px;">
@@ -224,78 +203,9 @@
                 <h1 class="display-4 m-0">Choose the <span class="text-primary">Best Option</span></h1>
             </div>
             <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="card border-0">
-                        <div class="card-header position-relative border-0 p-0 mb-4">
-                            <img class="card-img-top" src="img/price-canoe.jpg" alt="">
-                            <div class="position-absolute d-flex flex-column align-items-center justify-content-center w-100 h-100" style="top: 0; left: 0; z-index: 1; background: rgba(0, 0, 0, .5);">
-                                <h3 class="text-primary mb-3">Canoes</h3>
-                                <h1 class="display-4 text-white mb-0">
-                                    <small class="align-top" style="font-size: 22px; line-height: 45px;">from $</small>29<small class="align-bottom" style="font-size: 16px; line-height: 40px;">/ day</small>
-                                </h1>
-                            </div>
-                        </div>
-                        <div class="card-body text-center p-0">
-                            <ul class="list-group list-group-flush mb-4">
-                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i></li>
-                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i></li>
-                                <li class="list-group-item p-2"><i class="fa fa-times text-danger mr-2"></i></li>
-                                <li class="list-group-item p-2"><i class="fa fa-times text-danger mr-2"></i></li>
-                            </ul>
-                        </div>
-                        <div class="card-footer border-0 p-0">
-                            <a href="/boat.php" class="btn btn-primary btn-block p-3" style="border-radius: 0;">Learn more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card border-0">
-                        <div class="card-header position-relative border-0 p-0 mb-4">
-                            <img class="card-img-top" src="img/price-kayak.jpg" alt="">
-                            <div class="position-absolute d-flex flex-column align-items-center justify-content-center w-100 h-100" style="top: 0; left: 0; z-index: 1; background: rgba(0, 0, 0, .5);">
-                                <h3 class="text-secondary mb-3">Kayaks</h3>
-                                <h1 class="display-4 text-white mb-0">
-                                    <small class="align-top" style="font-size: 22px; line-height: 45px;">from $</small>39<small class="align-bottom" style="font-size: 16px; line-height: 40px;">/ day</small>
-                                </h1>
-                            </div>
-                        </div>
-                        <div class="card-body text-center p-0">
-                            <ul class="list-group list-group-flush mb-4">
-                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i></li>
-                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i></li>
-                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i></li>
-                                <li class="list-group-item p-2"><i class="fa fa-times text-danger mr-2"></i></li>
-                            </ul>
-                        </div>
-                        <div class="card-footer border-0 p-0">
-                            <a href="/boat.php" class="btn btn-secondary btn-block p-3" style="border-radius: 0;">Learn more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card border-0">
-                        <div class="card-header position-relative border-0 p-0 mb-4">
-                            <img class="card-img-top" src="img/price-raft.jpg" alt="">
-                            <div class="position-absolute d-flex flex-column align-items-center justify-content-center w-100 h-100" style="top: 0; left: 0; z-index: 1; background: rgba(0, 0, 0, .5);">
-                                <h3 class="text-primary mb-3">Rafts</h3>
-                                <h1 class="display-4 text-white mb-0">
-                                    <small class="align-top" style="font-size: 22px; line-height: 45px;">fom $</small>49<small class="align-bottom" style="font-size: 16px; line-height: 40px;">/ day</small>
-                                </h1>
-                            </div>
-                        </div>
-                        <div class="card-body text-center p-0">
-                            <ul class="list-group list-group-flush mb-4">
-                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i></li>
-                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i></li>
-                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i></li>
-                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i></li>
-                            </ul>
-                        </div>
-                        <div class="card-footer border-0 p-0">
-                            <a href="/boat.php" class="btn btn-primary btn-block p-3" style="border-radius: 0;">Learn more</a>
-                        </div>
-                    </div>
-                </div>
+                <?php foreach ($categories as $categorie) : ?>
+                    <?php include('_categorie_card.php') ?>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>

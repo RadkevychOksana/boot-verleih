@@ -1,3 +1,4 @@
+<?php require_once ('database/database.php');?>
 <div class="container-fluid p-0">
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
             <a href="" class="navbar-brand d-block d-lg-none">
@@ -15,9 +16,9 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Boats</a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="/boat.php" class="dropdown-item">Canoes</a>
-                            <a href="/boat.php" class="dropdown-item">Kayaks</a>
-                            <a href="/boat.php" class="dropdown-item">Rafts</a>
+                        <?php foreach($categories as $categorie):?> 
+                        <a href="/boat.php=<?= $categorie['slug']?>" class="dropdown-item"><?= $categorie['name']?></a>
+                        <?php endforeach; ?> 
                         </div>
                     </div>
                     <a href="contact.php" class="nav-item nav-link">Contact</a>
