@@ -1,37 +1,70 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "boots_verleih";
+function connect()
+{
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "boots_verleih";
 
-//Verbindung zur Datenbank
-$conn = new mysqli($servername, $username, $password,$dbname);
+  //Verbindung zur Datenbank
+  $conn = new mysqli($servername, $username, $password, $dbname);
 
-//Überpüfen die Verbindung zur Datenbank
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
-
-$sql = "SELECT * FROM boot_categorie";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-  while($row = $result->fetch_assoc()) {
-    $categories[]=$row;
+  //Überpüfen die Verbindung zur Datenbank
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
   }
-} else {
-  $categories=[];
+  return $conn;
 }
 
-$boat=[];
-if(!empty($GET['categorie'])){
-$stmt=$mysqli->prepare('SELECT * FROM boat category_slug=?');
-$stmt->bind_param('s',$GET['categorie']);
-$stmt->execute();
 
-$boats=[];
-
+function selectCategories()
+{
+  $conn = connect();
+  $sql = "SELECT * FROM boot_categorie";
+  $result = $conn->query($sql);
+  if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+      $categories[] = $row;
+    }
+  } else {
+    $categories = [];
+  }
+  $result->free_result();
+  $conn->close();
+  return  $categories;
 }
-$conn->close();
-?>
+
+function selectBoote($category_slug)
+{
+  $conn = connect();
+  $sql = "SELECT * FROM boat WHERE category_slug = '" . $category_slug . "'";
+  $result = $conn->query($sql);
+  if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+      $boote[] = $row;
+    }
+  } else {
+    $boote = [];
+  }
+  $result->free_result();
+  $conn->close();
+  return  $boote;
+}
+function getMinPrice()
+{
+  $conn = connect();
+  $sql = "SELECT category_slug, MIN(price) FROM boat GROUP BY category_slug";
+
+  $result = $conn->query($sql);
+  if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+      $minPrices[$row['category_slug']] = $row['MIN(price)'];
+    }
+  } else {
+    $minPrices = [];
+  }
+  $result->free_result();
+  $conn->close();
+
+  return $minPrices;
+}
