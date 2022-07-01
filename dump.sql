@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 30. Jun 2022 um 14:19
+-- Erstellungszeit: 01. Jul 2022 um 15:12
 -- Server-Version: 10.4.24-MariaDB
 -- PHP-Version: 8.1.6
 
@@ -34,18 +34,23 @@ CREATE TABLE `boat` (
   `category_slug` varchar(255) NOT NULL,
   `image_1` varchar(255) NOT NULL,
   `image_2` varchar(255) NOT NULL,
-  `image_3` varchar(255) NOT NULL
+  `image_3` varchar(255) NOT NULL,
+  `length` int(11) NOT NULL,
+  `width` int(11) NOT NULL,
+  `seats` int(11) NOT NULL,
+  `baggage` int(11) NOT NULL,
+  `weight` decimal(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `boat`
 --
 
-INSERT INTO `boat` (`id`, `name`, `price`, `category_slug`, `image_1`, `image_2`, `image_3`) VALUES
-(1, 'Каное надувна Spark 450 (Для тихої води 1-2 к.с.)', 200, 'canoe', 'img/boats/canoe_duo_1.jpg', 'img/boats/canoe_duo_2.jpg', 'img/boats/canoe_duo_3.jpg'),
-(2, 'Каное надувна Ладья 380К-2 (Для тихої води 1-2 к.с.)', 500, 'canoe', 'img/boats/canoe_saranac_1.jpg', 'img/boats/canoe_saranac_2.jpg', 'img/boats/canoe_saranac_3.jpg'),
-(3, 'Туристичний каяк Helena-Kayaks Duo', 500, 'kayaky', 'img/boats/kayak-duo-1.jpg', 'img/boats/kayak-duo-2.jpg', 'img/boats/kayak-duo-3.jpg'),
-(4, 'Туристичний каяк Helena-Kayaks Trio', 300, 'kayaky', 'img/boats/kayak-trio-1.jpg', 'img/boats/kayak-trio-2.jpg', 'img/boats/kayak-trio-3.jpg');
+INSERT INTO `boat` (`id`, `name`, `price`, `category_slug`, `image_1`, `image_2`, `image_3`, `length`, `width`, `seats`, `baggage`, `weight`) VALUES
+(1, 'Canoe Spark 450', 200, 'canoe', 'img/boats/canoe_duo_1.jpg', 'img/boats/canoe_duo_2.jpg', 'img/boats/canoe_duo_3.jpg', 450, 83, 2, 1, '22'),
+(2, 'Canoe Boat 380K-2', 500, 'canoe', 'img/boats/canoe_saranac_1.jpg', 'img/boats/canoe_saranac_2.jpg', 'img/boats/canoe_saranac_3.jpg', 380, 98, 2, 1, '17'),
+(3, 'Helena-Kayaks Duo', 500, 'kayaky', 'img/boats/kayak-duo-1.jpg', 'img/boats/kayak-duo-2.jpg', 'img/boats/kayak-duo-3.jpg', 440, 80, 2, 2, '32'),
+(4, 'Helena-Kayaks Trio', 300, 'kayaky', 'img/boats/kayak-trio-1.jpg', 'img/boats/kayak-trio-2.jpg', 'img/boats/kayak-trio-3.jpg', 445, 85, 3, 1, '33');
 
 -- --------------------------------------------------------
 

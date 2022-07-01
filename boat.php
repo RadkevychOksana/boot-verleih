@@ -44,20 +44,27 @@
             <div class="row py-5">
                 <div class="col-lg-7 pb-5 pb-lg-0 px-3 px-lg-5">
                     <h1 class="display-4 mb-4"><span class="text-primary"><?= $boot['name'] ?></span></h1>
-                    <h5 class="text-muted mb-3">Amet stet amet ut. Sit no vero vero no dolor. Sed erat ut sea. Just clita ut stet kasd at diam sit erat vero sit.</h5>
-                    <p class="mb-4">Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
+                    <h5 class="text-muted mb-3">Die Mindestmietdauer der Ausrüstung beträgt 24 Stunden.</h5>
+                    <p class="mb-4">Am Tag der Geräteausgabe, sofern die Ausgabe nach 15:00 Uhr erfolgt, und am Tag der Geräterückgabe, sofern die Rückgabe bis spätestens 12:00 Uhr erfolgt, wird die Leihgebühr nicht erhoben.</p>
                     <ul class="list-inline">
+
                         <li>
-                            <h5><i class="fa fa-check-double text-secondary mr-3"></i>Best In Industry</h5>
+                            <h5><i class="fa fa-check-double text-secondary mr-3"></i>Länge: <?= $boot['length'] ?> cm</h5>
                         </li>
                         <li>
-                            <h5><i class="fa fa-check-double text-secondary mr-3"></i>Emergency Services</h5>
+                            <h5><i class="fa fa-check-double text-secondary mr-3"></i>Breite: <?= $boot['width'] ?> cm</h5>
                         </li>
                         <li>
-                            <h5><i class="fa fa-check-double text-secondary mr-3"></i>24/7 Customer Support</h5>
+                            <h5><i class="fa fa-check-double text-secondary mr-3"></i>Sitze: <?= $boot['seats'] ?> nicht verstellbare Sitze.</h5>
+                        </li>
+                        <li>
+                            <h5><i class="fa fa-check-double text-secondary mr-3"></i>Gepäckfächer: <?= $boot['baggage'] ?> Stk.</h5>
+                        </li>
+                        <li>
+                            <h5><i class="fa fa-check-double text-secondary mr-3"></i>Gewicht: <?= $boot['weight'] ?> kg</h5>
                         </li>
                     </ul>
-                    <a href="" class="btn btn-lg btn-primary mt-3 px-4 cd-popup-trigger">Book now</a>
+                    <a href="" class="btn btn-lg btn-primary mt-3 px-4 cd-popup-trigger">Buchen Sie jetzt</a>
                 </div>
                 <div class="col-lg-5">
                     <div class="row px-3">
