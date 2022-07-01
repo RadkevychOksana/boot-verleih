@@ -19,7 +19,7 @@ $categories = selectCategories();?>
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Boats</a>
                     <div class="dropdown-menu rounded-0 m-0">
                         <?php foreach ($categories as $categorie) : ?>
-                            <a href="/boat.php?categorie=<?= $categorie['slug'] ?>" class="dropdown-item"><?= $categorie['name'] ?></a>
+                            <a href="/boot-verleih/boat.php?categorie=<?= $categorie['slug'] ?>" class="dropdown-item"><?= $categorie['name'] ?></a>
                         <?php endforeach; ?>
                     </div>
                 </div>
