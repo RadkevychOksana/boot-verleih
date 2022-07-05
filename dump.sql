@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 01. Jul 2022 um 15:12
+-- Erstellungszeit: 05. Jul 2022 um 15:07
 -- Server-Version: 10.4.24-MariaDB
 -- PHP-Version: 8.1.6
 
@@ -72,9 +72,9 @@ CREATE TABLE `boot_categorie` (
 --
 
 INSERT INTO `boot_categorie` (`id`, `name`, `slug`, `active`, `carousel_image`, `price_image`) VALUES
-(1, 'Canoes', 'canoe', 1, 'img/carousel-canoe.jpg', 'img/price-canoe.jpg'),
+(1, 'Kanu', 'canoe', 1, 'img/carousel-canoe.jpg', 'img/price-canoe.jpg'),
 (2, 'Kayaks', 'kayaky', 1, 'img/carousel-kayak.jpg', 'img/price-kayak.jpg'),
-(3, 'Rafts', 'rafty', 1, 'img/carousel-raft.jpg', 'img/price-raft.jpg');
+(3, 'Flösse', 'rafty', 1, 'img/carousel-raft.jpg', 'img/price-raft.jpg');
 
 --
 -- Indizes der exportierten Tabellen
