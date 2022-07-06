@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Erstellungszeit: 05. Jul 2022 um 15:07
--- Server-Version: 10.4.24-MariaDB
--- PHP-Version: 8.1.6
+-- Хост: localhost:8889
+-- Час створення: Лип 06 2022 р., 09:20
+-- Версія сервера: 5.7.34
+-- Версія PHP: 7.4.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Datenbank: `boots_verleih`
+-- База даних: `boot_verleih`
 --
 
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `boat`
+-- Структура таблиці `boat`
 --
 
 CREATE TABLE `boat` (
@@ -43,7 +43,7 @@ CREATE TABLE `boat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Daten für Tabelle `boat`
+-- Дамп даних таблиці `boat`
 --
 
 INSERT INTO `boat` (`id`, `name`, `price`, `category_slug`, `image_1`, `image_2`, `image_3`, `length`, `width`, `seats`, `baggage`, `weight`) VALUES
@@ -55,20 +55,20 @@ INSERT INTO `boat` (`id`, `name`, `price`, `category_slug`, `image_1`, `image_2`
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `boot_categorie`
+-- Структура таблиці `boot_categorie`
 --
 
 CREATE TABLE `boot_categorie` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `slug` varchar(255) NOT NULL,
-  `active` tinyint(1) NOT NULL DEFAULT 1,
+  `active` tinyint(1) NOT NULL DEFAULT '1',
   `carousel_image` varchar(255) NOT NULL,
   `price_image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Daten für Tabelle `boot_categorie`
+-- Дамп даних таблиці `boot_categorie`
 --
 
 INSERT INTO `boot_categorie` (`id`, `name`, `slug`, `active`, `carousel_image`, `price_image`) VALUES
@@ -76,37 +76,74 @@ INSERT INTO `boot_categorie` (`id`, `name`, `slug`, `active`, `carousel_image`, 
 (2, 'Kayaks', 'kayaky', 1, 'img/carousel-kayak.jpg', 'img/price-kayak.jpg'),
 (3, 'Flösse', 'rafty', 1, 'img/carousel-raft.jpg', 'img/price-raft.jpg');
 
+-- --------------------------------------------------------
+
 --
--- Indizes der exportierten Tabellen
+-- Структура таблиці `buchung`
+--
+
+CREATE TABLE `buchung` (
+  `id` int(11) NOT NULL,
+  `boot_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `date` varchar(255) NOT NULL,
+  `time` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп даних таблиці `buchung`
+--
+
+INSERT INTO `buchung` (`id`, `boot_id`, `name`, `email`, `date`, `time`) VALUES
+(18, 2, 'jhkjhjk', 'jjjjj@jj.jj', '07/19/2022', '10:22 AM'),
+(19, 2, 'jljkk', 'bbb@bbb.ccc', '07/29/2022', '10:24 AM'),
+(20, 1, 'lljlk', 'jjjj@dd.ddd', '07/27/2022', '10:27 PM'),
+(21, 2, 'kkk', 'kkk@kkk.com', '07/27/2022', '10:27 PM');
+
+--
+-- Індекси збережених таблиць
 --
 
 --
--- Indizes für die Tabelle `boat`
+-- Індекси таблиці `boat`
 --
 ALTER TABLE `boat`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indizes für die Tabelle `boot_categorie`
+-- Індекси таблиці `boot_categorie`
 --
 ALTER TABLE `boot_categorie`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT für exportierte Tabellen
+-- Індекси таблиці `buchung`
+--
+ALTER TABLE `buchung`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT для збережених таблиць
 --
 
 --
--- AUTO_INCREMENT für Tabelle `boat`
+-- AUTO_INCREMENT для таблиці `boat`
 --
 ALTER TABLE `boat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT für Tabelle `boot_categorie`
+-- AUTO_INCREMENT для таблиці `boot_categorie`
 --
 ALTER TABLE `boot_categorie`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT для таблиці `buchung`
+--
+ALTER TABLE `buchung`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

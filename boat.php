@@ -64,7 +64,7 @@
                             <h5><i class="fa fa-check-double text-secondary mr-3"></i>Gewicht: <?= $boot['weight'] ?> kg</h5>
                         </li>
                     </ul>
-                    <a href="" class="btn btn-lg btn-primary mt-3 px-4 cd-popup-trigger">Buchen Sie jetzt</a>
+                    <a href="" class="btn btn-lg btn-primary mt-3 px-4 cd-popup-trigger" data-boot-id="<?= $boot['id'] ?>">Buchen Sie jetzt</a>
                 </div>
                 <div class="col-lg-5">
                     <div class="row px-3">

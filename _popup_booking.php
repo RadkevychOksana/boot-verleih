@@ -3,30 +3,23 @@
         <div class="cd-popup-container">
             <!-- Booking Start -->
             <div id="booking" class="container-fluid">
-                <form class="py-5">
+                <form class="py-5" action="buchen.php" method="post">
+                    <input type="hidden" id="boot_id" name="boot_id">
                     <div class="form-group">
-                        <input type="text" class="form-control border-0 p-4" placeholder="Ihren Namen" required="required" />
+                        <input type="text" class="form-control border-0 p-4" id="name" name="name" placeholder="Ihren Namen" required="required" />
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control border-0 p-4" placeholder="Deine E-Mail" required="required" />
+                        <input type="email" class="form-control border-0 p-4" id="email" name="email" placeholder="Deine E-Mail" required="required" />
                     </div>
                     <div class="form-group">
                         <div class="date" id="date" data-target-input="nearest">
-                            <input type="text" class="form-control border-0 p-4 datetimepicker-input" placeholder="Reservierungsdatum" data-target="#date" data-toggle="datetimepicker" />
+                            <input type="text" class="form-control border-0 p-4 datetimepicker-input" name="date" placeholder="Reservierungsdatum" data-target="#date" data-toggle="datetimepicker" />
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="time" id="time" data-target-input="nearest">
-                            <input type="text" class="form-control border-0 p-4 datetimepicker-input" placeholder="Reservierungszeit" data-target="#time" data-toggle="datetimepicker" />
+                            <input type="text" class="form-control border-0 p-4 datetimepicker-input" name="time" placeholder="Reservierungszeit" data-target="#time" data-toggle="datetimepicker" />
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <select class="custom-select border-0 px-4" style="height: 47px;">
-                            <option selected>Wählen Sie ein Boot aus</option>
-                            <option value="1">Kanu</option>
-                            <option value="2">Kayak</option>
-                            <option value="3">Flöße</option>
-                        </select>
                     </div>
                     <div>
                         <button class="btn btn-dark btn-block border-0 py-3" type="submit">Buchen Sie jetzt</button>

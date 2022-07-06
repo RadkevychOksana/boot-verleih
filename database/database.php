@@ -1,10 +1,11 @@
 <?php
+
 function connect()
 {
   $servername = "localhost";
   $username = "root";
-  $password = "";
-  $dbname = "boots_verleih";
+  $password = "root";
+  $dbname = "boot_verleih";
 
   //Verbindung zur Datenbank
   $conn = new mysqli($servername, $username, $password, $dbname);
@@ -15,7 +16,6 @@ function connect()
   }
   return $conn;
 }
-
 
 function selectCategories()
 {
@@ -50,6 +50,7 @@ function selectBoote($category_slug)
   $conn->close();
   return  $boote;
 }
+
 function getMinPrice()
 {
   $conn = connect();
@@ -67,4 +68,18 @@ function getMinPrice()
   $conn->close();
 
   return $minPrices;
+}
+
+function createOrder($boot_id, $name, $email, $date, $time)
+{
+  $conn = connect();
+  $stmt = $conn->prepare("INSERT INTO buchung (`boot_id`, `name`, `email`, `date`, `time`)
+VALUES (?, ?, ?, ?, ?)");
+  $stmt->bind_param("dssss", $boot_id, $name, $email, $date, $time);
+  $result = $stmt->execute();
+
+  $stmt->close();
+  $conn->close();
+
+  return $result;
 }
