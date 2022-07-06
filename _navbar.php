@@ -25,7 +25,7 @@ $categories = selectCategories();?>
                 </div>
                 <a href="contact.php" class="nav-item nav-link">Kontakt</a>
             </div>
-            <a href="login.php" class="btn btn-lg btn-primary px-3 d-none d-lg-block mr-2">Jetzt mieten</a>
+            <a href="login.php" class="btn btn-lg btn-primary px-3 d-none d-lg-block mr-2">Eingang</a>
             <a href="anmeldung.php" class="btn btn-lg btn-primary px-3 d-none d-lg-block">Anmeldung</a>
         </div>
     </nav>

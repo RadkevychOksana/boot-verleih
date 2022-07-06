@@ -20,6 +20,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -32,8 +33,8 @@
     <?php include('_navbar.php'); ?>
     <!-- Navbar End -->
 
-        <!-- Contact Start -->
-        <div class="container-fluid pt-5">
+    <!-- Contact Start -->
+    <div class="container-fluid pt-5">
         <div class="d-flex flex-column text-center mb-5 pt-5">
             <h4 class="text-secondary mb-3">Wenn Sie nicht registriert sind, geben Sie Ihre Daten ein</h4>
             <h1 class="display-4 m-0">Füllen Sie <span class="text-primary">das Formular aus</span></h1>
@@ -42,21 +43,25 @@
             <div class="col-12 col-sm-4 mb-5">
                 <div class="contact-form">
                     <div id="success"></div>
-                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                    <div class="control-group">
-                            <input type="text" class="form-control p-4" id="name" placeholder="Ihren Namen" required="required" data-validation-required-message="Bitte geben Sie Ihren Namen ein" />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    <div class="control-group">
-                            <input type="email" class="form-control p-4" id="email" placeholder="E-Mail" required="required" data-validation-required-message="Bitte geben Sie ihre E-Mail-Adresse ein" />
+                    <form action="registration.php" method="POST" name="anmeldung" id="anmeldung-form" novalidate="novalidate">
+                        <div class="control-group">
+                            <input type="text" class="form-control p-4" id="firs-name" placeholder="Vorname" required="required" data-validation-required-message="Bitte geben Sie Ihren Namen ein" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input type="password" class="form-control p-4" id="password" placeholder="Passwort" required="required" data-validation-required-message="Bitte geben Sie Ihr Passwort ein" />
+                            <input type="text" class="form-control p-4" id="last-name" placeholder="Nachname" required="required" data-validation-required-message="Bitte geben Sie Ihren Nachname ein" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="email" class="form-control p-4" id="email-form" placeholder="E-Mail" required="required" data-validation-required-message="Bitte geben Sie ihre E-Mail-Adresse ein" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input type="password" class="form-control p-4" id="password-form" placeholder="Passwort" required="required" data-validation-required-message="Bitte geben Sie Ihr Passwort ein" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div>
-                            <button class="btn btn-primary py-3 px-5 w-100" type="submit" id="sendMessageButton">Anmeldung</button>
+                            <button class="btn btn-primary py-3 px-5 w-100" type="submit" id="anmeldung-button">Anmeldung</button>
                         </div>
                     </form>
                 </div>
