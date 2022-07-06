@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Хост: localhost:8889
--- Час створення: Лип 06 2022 р., 09:20
--- Версія сервера: 5.7.34
--- Версія PHP: 7.4.21
+-- Host: 127.0.0.1
+-- Erstellungszeit: 06. Jul 2022 um 14:23
+-- Server-Version: 10.4.24-MariaDB
+-- PHP-Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База даних: `boot_verleih`
+-- Datenbank: `boots_verleih`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `boat`
+-- Tabellenstruktur für Tabelle `boat`
 --
 
 CREATE TABLE `boat` (
@@ -43,32 +43,34 @@ CREATE TABLE `boat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп даних таблиці `boat`
+-- Daten für Tabelle `boat`
 --
 
 INSERT INTO `boat` (`id`, `name`, `price`, `category_slug`, `image_1`, `image_2`, `image_3`, `length`, `width`, `seats`, `baggage`, `weight`) VALUES
 (1, 'Canoe Spark 450', 200, 'canoe', 'img/boats/canoe_duo_1.jpg', 'img/boats/canoe_duo_2.jpg', 'img/boats/canoe_duo_3.jpg', 450, 83, 2, 1, '22'),
 (2, 'Canoe Boat 380K-2', 500, 'canoe', 'img/boats/canoe_saranac_1.jpg', 'img/boats/canoe_saranac_2.jpg', 'img/boats/canoe_saranac_3.jpg', 380, 98, 2, 1, '17'),
 (3, 'Helena-Kayaks Duo', 500, 'kayaky', 'img/boats/kayak-duo-1.jpg', 'img/boats/kayak-duo-2.jpg', 'img/boats/kayak-duo-3.jpg', 440, 80, 2, 2, '32'),
-(4, 'Helena-Kayaks Trio', 300, 'kayaky', 'img/boats/kayak-trio-1.jpg', 'img/boats/kayak-trio-2.jpg', 'img/boats/kayak-trio-3.jpg', 445, 85, 3, 1, '33');
+(4, 'Helena-Kayaks Trio', 300, 'kayaky', 'img/boats/kayak-trio-1.jpg', 'img/boats/kayak-trio-2.jpg', 'img/boats/kayak-trio-3.jpg', 445, 85, 3, 1, '33'),
+(5, 'Red River Sport 245', 450, 'rafty', 'img/boats/raft-one-1.jpg', '', '', 245, 95, 1, 1, '8'),
+(6, 'Fiord RM440N53', 250, 'rafty', 'img/boats/raft-two-1.jpg', '', '', 440, 190, 2, 1, '42');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `boot_categorie`
+-- Tabellenstruktur für Tabelle `boot_categorie`
 --
 
 CREATE TABLE `boot_categorie` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `slug` varchar(255) NOT NULL,
-  `active` tinyint(1) NOT NULL DEFAULT '1',
+  `active` tinyint(1) NOT NULL DEFAULT 1,
   `carousel_image` varchar(255) NOT NULL,
   `price_image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп даних таблиці `boot_categorie`
+-- Daten für Tabelle `boot_categorie`
 --
 
 INSERT INTO `boot_categorie` (`id`, `name`, `slug`, `active`, `carousel_image`, `price_image`) VALUES
@@ -79,7 +81,7 @@ INSERT INTO `boot_categorie` (`id`, `name`, `slug`, `active`, `carousel_image`, 
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `buchung`
+-- Tabellenstruktur für Tabelle `buchung`
 --
 
 CREATE TABLE `buchung` (
@@ -92,58 +94,57 @@ CREATE TABLE `buchung` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп даних таблиці `buchung`
+-- Daten für Tabelle `buchung`
 --
 
 INSERT INTO `buchung` (`id`, `boot_id`, `name`, `email`, `date`, `time`) VALUES
-(18, 2, 'jhkjhjk', 'jjjjj@jj.jj', '07/19/2022', '10:22 AM'),
-(19, 2, 'jljkk', 'bbb@bbb.ccc', '07/29/2022', '10:24 AM'),
-(20, 1, 'lljlk', 'jjjj@dd.ddd', '07/27/2022', '10:27 PM'),
-(21, 2, 'kkk', 'kkk@kkk.com', '07/27/2022', '10:27 PM');
+(22, 1, 'Oksana Radkevych', 'radoks@gmail.com', '07/17/2022', '10:00 AM'),
+(23, 6, 'Oksana Radkevych', 'oksana.radkevych@wagner-ecommerce.group', '07/28/2022', '12:20 PM'),
+(24, 5, 'Oksana radkevych', 'radoks@gmail.com', '07/14/2022', '2:57 PM');
 
 --
--- Індекси збережених таблиць
+-- Indizes der exportierten Tabellen
 --
 
 --
--- Індекси таблиці `boat`
+-- Indizes für die Tabelle `boat`
 --
 ALTER TABLE `boat`
   ADD PRIMARY KEY (`id`);
 
 --
--- Індекси таблиці `boot_categorie`
+-- Indizes für die Tabelle `boot_categorie`
 --
 ALTER TABLE `boot_categorie`
   ADD PRIMARY KEY (`id`);
 
 --
--- Індекси таблиці `buchung`
+-- Indizes für die Tabelle `buchung`
 --
 ALTER TABLE `buchung`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT для збережених таблиць
+-- AUTO_INCREMENT für exportierte Tabellen
 --
 
 --
--- AUTO_INCREMENT для таблиці `boat`
+-- AUTO_INCREMENT für Tabelle `boat`
 --
 ALTER TABLE `boat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT для таблиці `boot_categorie`
+-- AUTO_INCREMENT für Tabelle `boot_categorie`
 --
 ALTER TABLE `boot_categorie`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблиці `buchung`
+-- AUTO_INCREMENT für Tabelle `buchung`
 --
 ALTER TABLE `buchung`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

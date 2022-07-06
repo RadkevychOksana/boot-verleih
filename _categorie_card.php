@@ -8,7 +8,7 @@
                 <h1 class="display-4 text-white mb-0">
                     <small class="align-top" style="font-size: 22px; line-height: 45px;">ab $</small>
                     <?= $minPrices[$categorie['slug']] ?? 0 ?>
-                    <small class="align-bottom" style="font-size: 16px; line-height: 40px;">/ tag</small>
+                    <small class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Tag</small>
                 </h1>
             </div>
         </div>

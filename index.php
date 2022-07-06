@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    
 <head>
     <meta charset="utf-8">
     <title>BoatRent - Boat Rent Service</title>
@@ -49,7 +49,7 @@
                             <div class="p-3" style="max-width: 900px;">
                                 <h3 class="text-white mb-3 d-none d-sm-block">Bester Bootsverleih</h3>
                                 <h1 class="display-3 text-white mb-3"><?= $categorie['name'] ?></h1>
-                                <h5 class="text-white mb-3 d-none d-sm-block">Duo nonumy et dolor tempor no et. Diam sit diam sit diam erat</h5>
+                                <h5 class="text-white mb-3 d-none d-sm-block">Alles, was Sie für komfortables <?= $categorie['name'] ?>fahren brauchen</h5>
                                 <a href="#booking" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Buchen Sie jetzt</a>
                                 <a href="boat.php=<?= $categorie['slug'] ?>" class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">Lern mehr</a>
                             </div>
@@ -99,9 +99,9 @@
                             <div class="form-group">
                                 <select class="custom-select border-0 px-4" style="height: 47px;">
                                     <option selected>Wählen Sie ein Boot aus</option>
-                                    <option value="1">Kanu</option>
-                                    <option value="2">Kayak</option>
-                                    <option value="3">Flöße</option>
+                                    <?php foreach ($categories as $categorie) : ?>
+                                        <option value="1"><?= $categorie['name'] ?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
                             <div>
