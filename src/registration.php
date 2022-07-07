@@ -1,4 +1,7 @@
 <?php
+
+require_once('database.php');
+
 $firsName = filter_var(trim($_POST['first_name']));
 $lastName = filter_var(trim($_POST['last_name']));
 $email = filter_var(trim($_POST['email_form']));
@@ -9,12 +12,7 @@ if (mb_strlen($password) < 8 || mb_strlen($password) > 12) {
     exit();
 }
 
-require_once('database/database.php');
-creatUser(
-    $_POST['first_name'],
-    $_POST['last_name'],
-    $_POST['email_form'],
-    $_POST['password_form']
-);
+$result = creatUser($firsName, $lastName, $email, $password);
+
 header('Location: ' . $_SERVER['HTTP_REFERER']);
 exit;

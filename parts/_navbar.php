@@ -1,4 +1,4 @@
-<?php require_once('database/database.php');
+<?php require_once('src/database.php');
 $categories = selectCategories();?>
 
 <div class="container-fluid p-0">

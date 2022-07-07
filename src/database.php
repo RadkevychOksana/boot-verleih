@@ -4,8 +4,8 @@ function connect()
 {
   $servername = "localhost";
   $username = "root";
-  $password = "";
-  $dbname = "boots_verleih";
+  $password = "root";
+  $dbname = "boot_verleih";
 
   //Verbindung zur Datenbank
   $conn = new mysqli($servername, $username, $password, $dbname);
@@ -70,9 +70,17 @@ function getMinPrice()
   return $minPrices;
 }
 
-function createOrder($boot_id, $name, $email, $date, $time)
+function createOrder($boot_id, $name, $email, $date, $time, $user_id)
 {
   $conn = connect();
+  $query = $conn->query("SELECT * FROM users WHERE id = '$user_id'");
+  $user = $query->fetch_assoc();
+
+  if ($user) {
+    $name = $user['first_name'] . ' ' . $user['last_name'];
+    $email = $user['email_form'];
+  }
+
   $stmt = $conn->prepare("INSERT INTO buchung (`boot_id`, `name`, `email`, `date`, `time`)
 VALUES (?, ?, ?, ?, ?)");
   $stmt->bind_param("dssss", $boot_id, $name, $email, $date, $time);
@@ -83,6 +91,7 @@ VALUES (?, ?, ?, ?, ?)");
 
   return $result;
 }
+
 function creatUser($firsName, $lastName, $email, $password)
 {
   $conn = connect();
@@ -96,13 +105,14 @@ VALUES (?, ?, ?, ?)");
 
   return $result;
 }
+
 function authUser($email, $password)
 {
   $conn = connect();
   $password = md5($password . "qjkflcm894");
   $result = $conn->query("SELECT * FROM users WHERE email_form = '$email' AND password_form = '$password'");
   $user = $result->fetch_assoc();
-  
+
   $conn->close();
 
   return $user;

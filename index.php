@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="utf-8">
     <title>BoatRent - Boat Rent Service</title>
@@ -9,7 +9,7 @@
     <meta content="Boat Rent Service" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="../assets/img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
@@ -18,24 +18,24 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
 
     <!-- Topbar Start -->
-    <?php include('_header.php'); ?>
+    <?php include('parts/_header.php'); ?>
     <!-- Topbar End -->
 
 
     <!-- Navbar Start -->
-    <?php include('_navbar.php'); ?>
+    <?php include('parts/_navbar.php'); ?>
     <!-- Navbar End -->
 
     <!-- Carousel Start -->
@@ -51,7 +51,7 @@
                                 <h1 class="display-3 text-white mb-3"><?= $categorie['name'] ?></h1>
                                 <h5 class="text-white mb-3 d-none d-sm-block">Alles, was Sie für komfortables <?= $categorie['name'] ?>fahren brauchen</h5>
                                 <a href="#booking" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Buchen Sie jetzt</a>
-                                <a href="boat.php=<?= $categorie['slug'] ?>" class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">Lern mehr</a>
+                                <a href="boat.php?categorie=<?= $categorie['slug'] ?>" class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">Lern mehr</a>
                             </div>
                         </div>
                     </div>
@@ -182,20 +182,19 @@
             <div class="col-lg-5">
                 <div class="row px-3">
                     <div class="col-12 p-0">
-                        <img class="img-fluid w-100" src="img/about-1.jpg" alt="">
+                        <img class="img-fluid w-100" src="assets/img/about-1.jpg" alt="">
                     </div>
                     <div class="col-6 p-0">
-                        <img class="img-fluid w-100" src="img/about-2.jpg" alt="">
+                        <img class="img-fluid w-100" src="assets/img/about-2.jpg" alt="">
                     </div>
                     <div class="col-6 p-0">
-                        <img class="img-fluid w-100" src="img/about-3.jpg" alt="">
+                        <img class="img-fluid w-100" src="assets/img/about-3.jpg" alt="">
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- About End -->
-
 
     <!-- Pricing Plan Start -->
     <div id="pricing" class="container-fluid bg-light pt-5 pb-4">
@@ -205,19 +204,16 @@
             </div>
             <div class="row">
                 <?php foreach ($categories as $categorie) : ?>
-                    <?php include('_categorie_card.php') ?>
+                    <?php include('parts/_categorie_card.php') ?>
                 <?php endforeach; ?>
             </div>
         </div>
     </div>
     <!-- Pricing Plan End -->
 
-
     <!-- Footer Start -->
-    <?php include('_footer.php'); ?>
+    <?php include('parts/_footer.php'); ?>
     <!-- Footer End -->
-
-
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
@@ -225,19 +221,15 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-    <script src="lib/popup/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/lib/easing/easing.min.js"></script>
+    <script src="assets/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="assets/lib/tempusdominus/js/moment.min.js"></script>
+    <script src="assets/lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="assets/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="assets/js/main.js"></script>
 
 
 
