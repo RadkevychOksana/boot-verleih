@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 06. Jul 2022 um 14:23
+-- Erstellungszeit: 07. Jul 2022 um 16:18
 -- Server-Version: 10.4.24-MariaDB
 -- PHP-Version: 8.1.6
 
@@ -102,6 +102,32 @@ INSERT INTO `buchung` (`id`, `boot_id`, `name`, `email`, `date`, `time`) VALUES
 (23, 6, 'Oksana Radkevych', 'oksana.radkevych@wagner-ecommerce.group', '07/28/2022', '12:20 PM'),
 (24, 5, 'Oksana radkevych', 'radoks@gmail.com', '07/14/2022', '2:57 PM');
 
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `email_form` varchar(50) NOT NULL,
+  `password_form` varchar(32) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Daten für Tabelle `users`
+--
+
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `email_form`, `password_form`) VALUES
+(7, 'Oksana ', 'Radkevych', 'radoks@gmail.com', '16d5cd89af204ad9f8c31e69b5f758f1'),
+(2, 'Oksana', 'Radkevych', 'radoks@gmail.com', '87456123'),
+(3, 'Oksana', 'Radkevych', 'radoks@gmail.com', '12345678'),
+(4, 'Oksana', 'Radkevych', 'radoks@gmail.com', '12345678'),
+(5, 'Oksana', 'Radkevych', 'radoks@gmail.com', '12345678'),
+(6, 'Oksana', 'Radkevych', 'radoks@gmail.com', 'cbcb66b55f2f95b4b5ee7d0b3ca127b2');
+
 --
 -- Indizes der exportierten Tabellen
 --
@@ -125,6 +151,12 @@ ALTER TABLE `buchung`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indizes für die Tabelle `users`
+--
+ALTER TABLE `users`
+  ADD UNIQUE KEY `id` (`id`);
+
+--
 -- AUTO_INCREMENT für exportierte Tabellen
 --
 
@@ -145,6 +177,12 @@ ALTER TABLE `boot_categorie`
 --
 ALTER TABLE `buchung`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT für Tabelle `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -4,8 +4,8 @@ function connect()
 {
   $servername = "localhost";
   $username = "root";
-  $password = "root";
-  $dbname = "boot_verleih";
+  $password = "";
+  $dbname = "boots_verleih";
 
   //Verbindung zur Datenbank
   $conn = new mysqli($servername, $username, $password, $dbname);
@@ -82,4 +82,28 @@ VALUES (?, ?, ?, ?, ?)");
   $conn->close();
 
   return $result;
+}
+function creatUser($firsName, $lastName, $email, $password)
+{
+  $conn = connect();
+  $password = md5($password . "qjkflcm894");
+  $stmt = $conn->prepare("INSERT INTO users (`first_name`, `last_name`, `email_form`, `password_form`)
+VALUES (?, ?, ?, ?)");
+  $stmt->bind_param("ssss", $firsName, $lastName, $email, $password);
+  $result = $stmt->execute();
+  $stmt->close();
+  $conn->close();
+
+  return $result;
+}
+function authUser($email, $password)
+{
+  $conn = connect();
+  $password = md5($password . "qjkflcm894");
+  $result = $conn->query("SELECT * FROM users WHERE email_form = '$email' AND password_form = '$password'");
+  $user = $result->fetch_assoc();
+  
+  $conn->close();
+
+  return $user;
 }

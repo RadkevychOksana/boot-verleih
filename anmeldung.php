@@ -24,6 +24,7 @@
 </head>
 
 <body>
+
     <!-- Topbar Start -->
     <?php include('_header.php'); ?>
     <!-- Topbar End -->
@@ -42,28 +43,30 @@
         <div class="row justify-content-center">
             <div class="col-12 col-sm-4 mb-5">
                 <div class="contact-form">
-                    <div id="success"></div>
-                    <form action="registration.php" method="POST" name="anmeldung" id="anmeldung-form" novalidate="novalidate">
+                    <div id="success">
+                    </div>
+                    <form action="check.php" method="post" name="anmeldung" id="anmeldung-form" novalidate="novalidate">
                         <div class="control-group">
-                            <input type="text" class="form-control p-4" id="firs-name" placeholder="Vorname" required="required" data-validation-required-message="Bitte geben Sie Ihren Namen ein" />
+                            <input type="text" class="form-control p-4" id="first_name" placeholder="Vorname" required="required" data-validation-required-message="Bitte geben Sie Ihren Namen ein" value='' name="first_name" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input type="text" class="form-control p-4" id="last-name" placeholder="Nachname" required="required" data-validation-required-message="Bitte geben Sie Ihren Nachname ein" />
+                            <input type="text" class="form-control p-4" id="last_name" placeholder="Nachname" required="required" data-validation-required-message="Bitte geben Sie Ihren Nachname ein" value='' name="last_name" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input type="email" class="form-control p-4" id="email-form" placeholder="E-Mail" required="required" data-validation-required-message="Bitte geben Sie ihre E-Mail-Adresse ein" />
+                            <input type="email" class="form-control p-4" id="email_form" placeholder="E-Mail" required="required" data-validation-required-message="Bitte geben Sie ihre E-Mail-Adresse ein" value='' name="email_form" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input type="password" class="form-control p-4" id="password-form" placeholder="Passwort" required="required" data-validation-required-message="Bitte geben Sie Ihr Passwort ein" />
+                            <input type="password" class="form-control p-4" id="password_form" placeholder="Passwort" required="required" data-validation-required-message="Bitte geben Sie Ihr Passwort ein" value='' name="password_form" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div>
-                            <button class="btn btn-primary py-3 px-5 w-100" type="submit" id="anmeldung-button">Anmeldung</button>
+                            <button class="btn btn-primary py-3 px-5 w-100" type="submit" id="anmeldung-button" name="anmeldung-button">Anmeldung</button>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>

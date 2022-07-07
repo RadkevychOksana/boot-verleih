@@ -40,22 +40,27 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-12 col-sm-4 mb-5">
-                <div class="contact-form">
-                    <div id="success"></div>
-                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                    <div class="control-group">
-                            <input type="email" class="form-control p-4" id="email" placeholder="E-Mail" required="required" data-validation-required-message="Bitte geben Sie ihre E-Mail-Adresse ein" />
-                            <p class="help-block text-danger"></p>
+                <?php if (!isset($_COOKIE['user'])) { ?>
+                    <div class="contact-form">
+                        <div id="success">
                         </div>
-                        <div class="control-group">
-                            <input type="password" class="form-control p-4" id="password" placeholder="Passwort" required="required" data-validation-required-message="Bitte geben Sie Ihr Passwort ein" />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div>
-                            <button class="btn btn-primary py-3 px-5 w-100" type="submit" id="sendMessageButton">Login</button>
-                        </div>
-                    </form>
-                </div>
+                        <form action="auth.php" method="post" name="eingang" id="eingang" novalidate="novalidate">
+                            <div class="control-group">
+                                <input type="email" class="form-control p-4" id="email" name="email_form" placeholder="E-Mail" required="required" data-validation-required-message="Bitte geben Sie ihre E-Mail-Adresse ein" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="password" class="form-control p-4" id="password" name="password_form" placeholder="Passwort" required="required" data-validation-required-message="Bitte geben Sie Ihr Passwort ein" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary py-3 px-5 w-100" type="submit" id="sendMessageButton">Login</button>
+                            </div>
+                        </form>
+                    <?php } else { ?>
+                        <p><strong><?= $_COOKIE['user'] ?> </strong> 👌 Angemeldet <a href="/boot-verleih/exit.php">Usgang</a></p>
+                    <?php } ?>
+                    </div>
             </div>
         </div>
     </div>
