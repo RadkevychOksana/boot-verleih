@@ -2,8 +2,8 @@
 
 require_once('database.php');
 
-$email = filter_var(trim($_POST['email_form']));
-$password = filter_var(trim($_POST['password_form']));
+$email = trim($_POST['email_form']);
+$password = trim($_POST['password_form']);
 
 $user = authUser($email, $password);
 

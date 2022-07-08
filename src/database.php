@@ -4,8 +4,8 @@ function connect()
 {
   $servername = "localhost";
   $username = "root";
-  $password = "root";
-  $dbname = "boot_verleih";
+  $password = "";
+  $dbname = "boots_verleih";
 
   //Verbindung zur Datenbank
   $conn = new mysqli($servername, $username, $password, $dbname);

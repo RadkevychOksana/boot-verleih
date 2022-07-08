@@ -40,8 +40,7 @@
                     <div id="success"></div>
                     <form name="sentMessage" id="contactForm" novalidate="novalidate">
                         <div class="control-group">
-                            <input type="text" class="form-control p-4" id="name" placeholder="Ihren Namen" required="required"
-                            data-validation-required-message="Bitte geben Sie Ihren Namen ein" />
+                            <input type="text" class="form-control p-4" id="name" placeholder="Ihren Namen" required="required" data-validation-required-message="Bitte geben Sie Ihren Namen ein" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">

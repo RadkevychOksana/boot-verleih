@@ -21,7 +21,7 @@
             </ul>
         </div>
         <div class="card-footer border-0 p-0">
-            <a href="/boat.php" class="btn btn-primary btn-block p-3" style="border-radius: 0;">Lern mehr</a>
+            <a href="boat.php?categorie=<?= $categorie['slug'] ?>" class="btn btn-primary btn-block p-3" style="border-radius: 0;">Lern mehr</a>
         </div>
     </div>
 </div>

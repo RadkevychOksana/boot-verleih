@@ -20,6 +20,7 @@
   -moz-transition: opacity 0.3s 0s, visibility 0s 0.3s;
   transition: opacity 0.3s 0s, visibility 0s 0.3s;
 }
+
 .cd-popup.is-visible {
   opacity: 1;
   visibility: visible;
@@ -50,12 +51,13 @@
   -moz-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
+
 .cd-popup-container p {
   padding: 3em 1em;
 }
 
-.cd-popup-container{
-  background:#ed6436;
+.cd-popup-container {
+  background: #ed6436;
 }
 
 .cd-popup-container .cd-popup-close {
@@ -65,6 +67,7 @@
   width: 30px;
   height: 30px;
 }
+
 .cd-popup-container .cd-popup-close::before,
 .cd-popup-container .cd-popup-close::after {
   content: "";
@@ -74,6 +77,7 @@
   height: 3px;
   background-color: white;
 }
+
 .cd-popup-container .cd-popup-close::before {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -82,6 +86,7 @@
   transform: rotate(45deg);
   left: 8px;
 }
+
 .cd-popup-container .cd-popup-close::after {
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
@@ -90,6 +95,7 @@
   transform: rotate(-45deg);
   right: 8px;
 }
+
 .is-visible .cd-popup-container {
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0);
@@ -97,6 +103,7 @@
   -o-transform: translateY(0);
   transform: translateY(0);
 }
+
 @media only screen and (min-width: 1170px) {
   .cd-popup-container {
     margin: 8em auto;
