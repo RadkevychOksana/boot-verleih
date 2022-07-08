@@ -6,7 +6,7 @@
             <div class="position-absolute d-flex flex-column align-items-center justify-content-center w-100 h-100" style="top: 0; left: 0; z-index: 1; background: rgba(0, 0, 0, .5);">
                 <h3 class="text-primary mb-3"><?= $categorie['name'] ?></h3>
                 <h1 class="display-4 text-white mb-0">
-                    <small class="align-top" style="font-size: 22px; line-height: 45px;">ab $</small>
+                    <small class="align-top" style="font-size: 22px; line-height: 45px;">ab &euro;</small>
                     <?= $minPrices[$categorie['slug']] ?? 0 ?>
                     <small class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Tag</small>
                 </h1>
