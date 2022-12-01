@@ -41,13 +41,9 @@
                     <h6>Öffnungszeiten</h6>
                     <p class="m-0">7.00AM - 9.00PM</p>
                 </div>
-                <div class="d-inline-flex flex-column text-center px-3 border-right">
-                    <h6>Schreiben Sie uns eine E-Mail</h6>
+                <div class="d-inline-flex flex-column text-center px-3">
+                    <h6>Schreiben Sie uns eine Email</h6>
                     <a href="mailto:info@example.com">info@example.com</a>
-                </div>
-                <div class="d-inline-flex flex-column text-center pl-3">
-                    <h6>Rufen Sie uns an</h6>
-                    <a href="tel:+012 345 6789">+012 345 6789</a>
                 </div>
             </div>
         </div>

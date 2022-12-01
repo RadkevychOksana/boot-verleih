@@ -4,7 +4,7 @@ function connect()
 {
   $servername = "localhost";
   $username = "root";
-  $password = "";
+  $password = "root";
   $dbname = "boots_verleih";
 
   //Verbindung zur Datenbank
