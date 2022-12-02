@@ -3,8 +3,8 @@
 function connect()
 {
   $servername = "localhost";
-  $username = "root";
-  $password = "root";
+  $username = "sammy";
+  $password = "password";
   $dbname = "boots_verleih";
 
   //Verbindung zur Datenbank
